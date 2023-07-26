@@ -1,0 +1,96 @@
+header{
+    width: 100%;
+}
+
+header .inner{
+    width: 1180px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .inner h1{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+
+/* h1 태그 안의 a 태그에 작성한 것은 h1에 폰트 값을 지정해줘도 적용되지 않는다. */
+header .inner h1 a{
+    font: bold 24px/1 "arial";
+    color: #444;
+}
+
+/* menu Web */
+
+header .inner .menuWeb #gnb{
+    position: absolute;
+    right: 60px;
+    bottom: 0;
+}
+
+header .inner .menuWeb #gnb li{
+    float: left;
+}
+
+header .inner .menuWeb #gnb li a{
+    display: block;
+    padding: 14px 40px;
+    font: bold 14px/1 "arial";
+    color: #777;
+}
+
+header .inner .menuWeb #gnb li a:hover{
+    background-color: #555;
+    color: #fff;
+}
+
+header .inner .util{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+header .inner .util li{
+    float: left;
+    margin-left: 20px;
+}
+
+header .inner .util li a{
+    font: 12px/1 "arial";
+    color: #999;
+}
+
+@media screen and (max-width : 1160px) {
+    
+    header{
+        width: 100%;
+    }
+    
+    header .inner{
+        width: 80vw;
+        height: 80px;
+    }
+    
+    /* h1 태그 안의 a 태그에 작성한 것은 h1에 폰트 값을 지정해줘도 적용되지 않는다. */
+    header .inner h1 a{
+        font: bold 20px/1 "arial";
+    }
+    
+    header .inner .util{
+        position: absolute;
+        top: -100%;
+        right: -100%;
+    }
+    
+    header .inner .util li{
+        float: left;
+        margin-left: 20px;
+    }
+    
+    header .inner .util li a{
+        font: 12px/1 "arial";
+        color: #fff;
+    }
+
+}
