@@ -94,3 +94,127 @@ header .inner .util li a{
     }
 
 }
+
+/* 햄버거 버튼 */
+header .inner .btnCall{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+header .inner .btnCall::before{
+    content: '';
+    display: block;
+    clear: both;
+
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: top 0.5s 0s, transform 0.5s 0.5s;
+    /*  */
+}
+
+header .inner .btnCall::after{
+    content: '';
+    display: block;
+    clear: both;
+
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+}
+
+header .inner .btnCall span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    text-indent: -999999px;
+
+    transition: 0.5s;
+    /* text-indent는 들여쓰기로 터무니없는 값으로 안드로메다로 보내버림 */
+}
+
+/* 자바스크립트에서 on이라는 클래스를 붙이기만 하고 실제 움직이거나 변경되는 것은 css에 적어둔다. */
+header .inner .btnCall.on::before{
+    top: 50%;
+    margin-top: -1px;
+    transform: rotate(45deg);
+}
+
+header .inner .btnCall.on::after{
+    bottom: 50%;
+    margin-bottom: -1px;
+    transform: rotate(-45deg);
+}
+
+header .inner .btnCall.on span{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+/* 모바일 메뉴 */
+header .inner .menuMo{
+    width: 270px;
+    height: 100vh;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    left: -270px;
+    padding: 35px 30px;
+    z-index: 10;
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+header .inner .menuMo.on{
+    left: 0;
+}
+
+header .inner .menuMo h2{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #666;
+}
+
+header .inner .menuMo h2 a{
+    display: block;
+    font: bold 24px/1 "arial";
+    color: #fff;
+}
+
+header .inner .menuMo h2 span{
+    font-size: 12px;
+    color: #aaa ;
+}
+
+header .inner .menuMo #gnbMo li a{
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+    color: #888;
+    font: bold 14px/1 "arial";
+}
